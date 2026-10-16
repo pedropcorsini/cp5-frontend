@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RACHA | Rachou, pagou.</title>
+  <meta name="description" content="RACHA é um app fictício para dividir contas entre amigos: o rolê, o delivery, o mercado da república. Projeto estudantil de Front-End (CP5).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Marquee do topo -->
+  <div class="marquee" aria-label="Rachou, pagou. Ninguém fica devendo.">
+    <div class="marquee__trilho" aria-hidden="true">
+      <span>Rachou, pagou</span><span>Ninguém fica devendo</span><span>Pix na hora</span><span>Sem climão no grupo</span>
+      <span>Rachou, pagou</span><span>Ninguém fica devendo</span><span>Pix na hora</span><span>Sem climão no grupo</span>
+      <span>Rachou, pagou</span><span>Ninguém fica devendo</span><span>Pix na hora</span><span>Sem climão no grupo</span>
+      <span>Rachou, pagou</span><span>Ninguém fica devendo</span><span>Pix na hora</span><span>Sem climão no grupo</span>
+    </div>
+  </div>
+
+  <!-- Header fixo -->
+  <header class="header" id="header">
+    <a class="logo" href="#topo" aria-label="RACHA, voltar ao início">R</a>
+
+    <nav class="header__pilulas" aria-label="Seções">
+      <a class="pilula" href="#como-funciona">Como funciona</a>
+      <a class="pilula" href="#pix">Pix</a>
+      <a class="pilula" href="#roles">Rolês</a>
+      <a class="pilula" href="#baixar">Baixar</a>
+    </nav>
+
+    <div class="header__acoes">
+      <button class="botao-mais" id="botao-mais" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+      </button>
+      <a class="botao botao--cheio" href="#baixar">Abrir o app</a>
+    </div>
+
+    <nav class="menu" id="menu" aria-label="Menu" hidden>
+      <a class="pilula" href="#como-funciona">Como funciona</a>
+      <a class="pilula" href="#pix">Pix</a>
+      <a class="pilula" href="#roles">Rolês</a>
+      <a class="pilula" href="#baixar">Baixar</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+
+    <!-- PAINEL 1: azul-claro -->
+    <div class="painel painel--ceu">
+
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-titulo">
+        <canvas class="fita" data-fita="hero" aria-hidden="true"></canvas>
+
+        <div class="hero__conteudo">
+          <div class="hero__marca">
+            <h1 class="display hero__titulo" id="hero-titulo">RACHA</h1>
+            <img class="adesivo adesivo--pizza" src="img/adesivos/pizza.svg" alt="" width="120" height="120">
+            <img class="adesivo adesivo--moeda" src="img/adesivos/moeda.svg" alt="" width="120" height="120">
+            <img class="adesivo adesivo--comanda" src="img/adesivos/comanda.svg" alt="" width="120" height="120">
+            <img class="adesivo adesivo--carteira" src="img/adesivos/carteira.svg" alt="" width="120" height="120">
+            <img class="adesivo adesivo--moeda-r" src="img/adesivos/moeda-r.svg" alt="" width="120" height="120">
+          </div>
+
+          <p class="hero__frase">Rachou, pagou.</p>
+
+          <div class="hero__botoes">
+            <a class="botao botao--contorno" href="#baixar">Abrir no navegador</a>
+            <a class="botao botao--contorno" href="#baixar">
+              <img src="img/adesivos/moeda-r.svg" alt="" width="22" height="22">
+              Baixar o app
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Celulares -->
+      <section class="celulares" aria-label="Telas do app">
+        <canvas class="fita" data-fita="celulares" aria-hidden="true"></canvas>
+
+        <div class="celulares__par">
+          <!-- Tela 1: conta do rolê -->
+          <div class="celular" role="img" aria-label="Tela do app mostrando a conta do rolê de sexta, R$ 248 dividido por 4 pessoas, R$ 62 para cada">
+            <div class="celular__tela" aria-hidden="true">
+              <div class="celular__status"><span>21:47</span><span class="celular__icones"></span></div>
+              <p class="tela__rotulo">Rolê de sexta</p>
+              <p class="tela__titulo">Conta do bar</p>
+
+              <div class="tela__total">
+                <span class="tela__mini">Total</span>
+                <strong>R$ 248,00</strong>
+                <span class="tela__divisao">÷ 4 pessoas = <b>R$ 62,00</b> cada</span>
+              </div>
+
+              <ul class="tela__lista">
+                <li><span class="avatar avatar--laranja">B</span><span class="tela__nome">Bia</span><span class="selo selo--ok">Pagou</span></li>
+                <li><span class="avatar avatar--amarelo">L</span><span class="tela__nome">Léo</span><span class="selo selo--ok">Pagou</span></li>
+                <li><span class="avatar avatar--verde">C</span><span class="tela__nome">Caio</span><span class="selo">Falta</span></li>
+                <li><span class="avatar avatar--lilas">V</span><span class="tela__nome">Você</span><span class="selo selo--ok">Pagou</span></li>
+              </ul>
+
+              <span class="tela__botao">Cobrar o Caio</span>
+              <div class="tela__abas"><i></i><i class="ativa"></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <!-- Tela 2: quem deve quem -->
+          <div class="celular celular--baixo" role="img" aria-label="Tela do app mostrando quem deve quem: você recebe R$ 124">
+            <div class="celular__tela" aria-hidden="true">
+              <div class="celular__status"><span>21:48</span><span class="celular__icones"></span></div>
+              <div class="tela__topo"><span class="tela__logo">R</span><span class="tela__chip">Saldo do grupo</span></div>
+
+              <div class="tela__banner">Rep da Augusta <span>6 pessoas</span></div>
+
+              <div class="tela__saldo">
+                <span class="tela__mini">Você recebe</span>
+                <strong>R$ 124,00</strong>
+                <span class="tela__mais">+ R$ 62,00 hoje</span>
+              </div>
+
+              <div class="tela__atalhos"><span>Dividir</span><span>Cobrar</span><span>Pix</span><span>Grupos</span></div>
+
+              <ul class="tela__lista tela__lista--saldo">
+                <li><span class="avatar avatar--laranja">B</span><span class="tela__nome">Bia te deve<small>Mercado</small></span><b>R$ 62,00</b></li>
+                <li><span class="avatar avatar--amarelo">L</span><span class="tela__nome">Léo te deve<small>Luz de março</small></span><b>R$ 62,00</b></li>
+                <li><span class="avatar avatar--verde">C</span><span class="tela__nome">Você deve ao Caio<small>Delivery</small></span><b class="negativo">R$ 18,50</b></li>
+              </ul>
+              <div class="tela__abas"><i class="ativa"></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Escada tipográfica -->
+      <section class="escada" id="baixar" aria-labelledby="escada-titulo">
+        <h2 class="sr-only" id="escada-titulo">Todo rolê tem conta. Racha no app.</h2>
+
+        <div class="escada__bloco display">
+          <div class="escada__linha escada__linha--1" aria-hidden="true">
+            <span>TODO</span>
+            <img class="adesivo adesivo--inline" src="img/adesivos/moeda.svg" alt="" width="120" height="120">
+            <span class="italico">ROLÊ</span>
+          </div>
+          <div class="escada__linha escada__linha--2">
+            <img class="adesivo adesivo--inline" src="img/adesivos/check-flor.svg" alt="" width="120" height="120">
+            <span aria-hidden="true">TEM CONTA</span>
+            <a class="cartao-qr" href="https://github.com/pedropcorsini/cp5-frontend" target="_blank" rel="noopener">
+              <span class="cartao-qr__codigo"><img src="img/qr-code.svg" alt="QR code que leva ao repositório do trabalho no GitHub" width="96" height="96"></span>
+              <span class="cartao-qr__texto">Baixar</span>
+            </a>
+          </div>
+          <div class="escada__linha escada__linha--3" aria-hidden="true">
+            <span class="italico">RACHA NO APP</span>
+            <img class="adesivo adesivo--inline" src="img/adesivos/carteira.svg" alt="" width="120" height="120">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAINEL 2: branco -->
+    <div class="painel painel--branco" id="como-funciona">
+
+      <p class="painel__chamada">Seu atalho pra ficar quite.</p>
+
+      <section class="recurso" aria-labelledby="recurso-1">
+        <div class="recurso__arte recurso__arte--moedas" aria-hidden="true">
+          <img src="img/adesivos/moeda.svg" alt=""><img src="img/adesivos/moeda-r.svg" alt=""><img src="img/adesivos/moeda.svg" alt="">
+          <img src="img/adesivos/moeda-r.svg" alt=""><img src="img/adesivos/moeda.svg" alt=""><img src="img/adesivos/moeda.svg" alt="">
+          <img src="img/adesivos/moeda-r.svg" alt=""><img src="img/adesivos/moeda.svg" alt=""><img src="img/adesivos/moeda-r.svg" alt="">
+        </div>
+        <div class="recurso__texto">
+          <h2 class="display" id="recurso-1">DIVIDE EM<br>3 TOQUES</h2>
+          <p>Anota o gasto, marca quem estava junto e pronto. O RACHA faz a conta, até com os 10% do garçom e com quem não bebeu.</p>
+          <a class="botao botao--cheio" href="#baixar">Começar <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="recurso recurso--invertido" id="pix" aria-labelledby="recurso-2">
+        <div class="recurso__arte recurso__arte--pix" aria-hidden="true">
+          <div class="notificacao">
+            <span class="avatar avatar--laranja">B</span>
+            <span><b>Bia pagou R$ 62,00</b><small>Pix recebido agora</small></span>
+          </div>
+          <div class="notificacao notificacao--2">
+            <span class="avatar avatar--verde">C</span>
+            <span><b>Cobrança enviada ao Caio</b><small>Com o Pix pronto pra pagar</small></span>
+          </div>
+          <img class="adesivo adesivo--pix" src="img/adesivos/check-flor.svg" alt="">
+        </div>
+        <div class="recurso__texto">
+          <h2 class="display" id="recurso-2">SEM CLIMÃO<br>PIX NA HORA</h2>
+          <p>O app manda a cobrança com o Pix pronto. Ninguém precisa pedir duas vezes e você não vira o chato do grupo.</p>
+          <a class="botao botao--cheio" href="#baixar">Quero cobrar <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAINEL 3: cinza (carrossel) -->
+    <div class="painel painel--cinza" id="roles">
+      <section class="carrossel" aria-labelledby="carrossel-titulo">
+        <h2 class="carrossel__titulo" id="carrossel-titulo">Dá pra rachar de tudo</h2>
+
+        <div class="carrossel__trilho" id="carrossel-trilho" tabindex="0" aria-label="Exemplos de contas para rachar">
+          <article class="cartao cartao--laranja">
+            <img class="adesivo cartao__adesivo" src="img/adesivos/pizza.svg" alt="">
+            <h3 class="display italico">RACHA O DELIVERY</h3>
+          </article>
+          <article class="cartao cartao--amarelo">
+            <h3 class="display italico">MERCADO DA REP</h3>
+            <img class="adesivo cartao__adesivo" src="img/adesivos/comanda.svg" alt="">
+          </article>
+          <article class="cartao cartao--azul">
+            <img class="adesivo cartao__adesivo" src="img/adesivos/copo.svg" alt="">
+            <h3 class="display italico">VIAGEM DE FORMATURA</h3>
+          </article>
+          <article class="cartao cartao--lilas">
+            <h3 class="display italico">VAQUINHA DO PRESENTE</h3>
+            <img class="adesivo cartao__adesivo" src="img/adesivos/carteira.svg" alt="">
+          </article>
+          <article class="cartao cartao--verde">
+            <img class="adesivo cartao__adesivo" src="img/adesivos/moeda.svg" alt="">
+            <h3 class="display italico">CHURRAS DO FIM DE SEMANA</h3>
+          </article>
+          <article class="cartao cartao--roxo">
+            <h3 class="display italico">CONTA DE LUZ DA REP</h3>
+            <img class="adesivo cartao__adesivo" src="img/adesivos/check-flor.svg" alt="">
+          </article>
+        </div>
+
+        <div class="carrossel__controles">
+          <button class="seta" id="carrossel-anterior" type="button" aria-label="Cartão anterior"><span aria-hidden="true">←</span></button>
+          <div class="carrossel__pontos" id="carrossel-pontos" aria-label="Navegação do carrossel"></div>
+          <button class="seta" id="carrossel-proximo" type="button" aria-label="Próximo cartão"><span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Faixa final -->
+    <section class="faixa" aria-labelledby="faixa-titulo">
+      <canvas class="fita" data-fita="faixa" aria-hidden="true"></canvas>
+      <h2 class="sr-only" id="faixa-titulo">Baixa o RACHA</h2>
+
+      <div class="faixa__fileira" aria-hidden="true">
+        <div class="faixa__trilho">
+          <span class="bloco bloco--laranja">BAIXA O RACHA</span><span class="bloco bloco--azul">BAIXA O RACHA</span><span class="bloco bloco--branco">BAIXA O RACHA</span><span class="bloco bloco--lilas">BAIXA O RACHA</span>
+          <span class="bloco bloco--laranja">BAIXA O RACHA</span><span class="bloco bloco--azul">BAIXA O RACHA</span><span class="bloco bloco--branco">BAIXA O RACHA</span><span class="bloco bloco--lilas">BAIXA O RACHA</span>
+        </div>
+      </div>
+      <div class="faixa__fileira faixa__fileira--volta" aria-hidden="true">
+        <div class="faixa__trilho">
+          <span class="bloco bloco--amarelo">BAIXA O RACHA</span><span class="bloco bloco--verde">BAIXA O RACHA</span><span class="bloco bloco--roxo">BAIXA O RACHA</span><span class="bloco bloco--branco">BAIXA O RACHA</span>
+          <span class="bloco bloco--amarelo">BAIXA O RACHA</span><span class="bloco bloco--verde">BAIXA O RACHA</span><span class="bloco bloco--roxo">BAIXA O RACHA</span><span class="bloco bloco--branco">BAIXA O RACHA</span>
+        </div>
+      </div>
+
+      <img class="adesivo faixa__adesivo faixa__adesivo--1" src="img/adesivos/moeda-r.svg" alt="">
+      <img class="adesivo faixa__adesivo faixa__adesivo--2" src="img/adesivos/moeda.svg" alt="">
+      <img class="adesivo faixa__adesivo faixa__adesivo--3" src="img/adesivos/pizza.svg" alt="">
+
+      <div class="faixa__botoes">
+        <a class="botao botao--contorno" href="#baixar">Abrir no navegador</a>
+        <a class="botao botao--contorno" href="#baixar">Baixar o app</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="painel painel--ceu rodape">
+    <div class="rodape__marca">
+      <span class="logo" aria-hidden="true">R</span>
+      <p class="display rodape__nome">RACHA</p>
+      <p>Rachou, pagou. Um app para dividir a conta sem climão.</p>
+    </div>
+
+    <div class="rodape__colunas">
+      <div>
+        <h2>Aviso</h2>
+        <p>O RACHA é uma marca fictícia. Não existe app, Pix nem cobrança de verdade. Os botões só navegam pela página.</p>
+      </div>
+      <div>
+        <h2>O trabalho</h2>
+        <ul>
+          <li>Fins estudantis</li>
+          <li>Front-End, Checkpoint 5</li>
+          <li>Atividade de vibecode</li>
+          <li><a href="https://github.com/pedropcorsini/cp5-frontend" target="_blank" rel="noopener">Repositório no GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Créditos</h2>
+        <ul>
+          <li>Estilo inspirado no site da Slush, via styles.refero.design</li>
+          <li>Fontes Anton e Satoshi</li>
+          <li>Fita 3D feita com Three.js</li>
+          <li>Feito por <a href="https://www.linkedin.com/in/pedropassoscorsini/" target="_blank" rel="noopener">Pedro Passos Corsini</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/fita3d.js" defer></script>
+</body>
+</html>
